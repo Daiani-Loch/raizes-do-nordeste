@@ -1,0 +1,2479 @@
+/* CONFIGURAÇÕES GERAIS DO SITE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ead9c5;
+}
+
+
+/* DECORAÇÃO LATERAL - RAÍZES DO NORDESTE */
+@media (min-width: 768px) {
+
+    body {
+        position: relative;
+        isolation: isolate;
+    }
+
+    /* Chão dos dois lados */
+    body .decoracao-chao {
+        position: fixed;
+        inset: 0;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        pointer-events: none;
+        background-image:
+            url("imagens/chao-lado-esquerdo.png"),
+            url("imagens/chao-lado-direito.png");
+        background-repeat: no-repeat, no-repeat;
+        background-position:
+            left calc(100% - 75px),
+            right calc(100% - 75px);
+        background-size: 40vw 190px, 40vw 190px;
+    }
+
+    body::before,
+    body::after {
+        content: "";
+        position: fixed;
+        z-index: 0;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+        opacity: 0.75;
+    }
+
+    /* Lateral esquerda: mandacaru e chapéu */
+    body::before {
+        width: min(14vw, 185px);
+        height: min(50vh, 380px);
+        left: 10px;
+        bottom: 20px;
+        background-image: url("imagens/decoracao-esquerda-raizes.png");
+        background-position: left bottom;
+        z-index: 1;
+    }
+
+    /* Lateral direita: sol e passarinho */
+    body::after {
+        width: min(25vw, 320px);
+        height: min(85vh, 650px);
+        right: -20px;
+        top: 0;
+
+        background-image:
+            url("imagens/solzinho-raizes.png"),
+            url("imagens/passarinho-raizes.png");
+
+        background-repeat: no-repeat, no-repeat;
+        background-size: 175px auto, 80px auto;
+        background-position: right 10px top 20px, right 170px top 290px;
+    }
+
+}
+
+
+/* TELA INICIAL */
+.tela_inicial {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.conteudo_tela {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+
+    background-color: #f5eadc;
+
+    border-radius: 20px;
+
+    padding: 40px 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5px;
+    align-items: center;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.logo_inicio {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 7px auto 10px;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.foto_inicio {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin: 0 auto 30px;
+    box-sizing: border-box;
+}
+
+.opcoes_inicio {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.opcoes_inicio button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    padding: 17px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.opcoes_inicio button:hover {
+    background-color: #6b4028;
+}
+
+/* Símbolos dos botões da tela inicial */
+.opcoes_inicio button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+    position: relative;
+}
+
+.icone-botao {
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+
+/* TELA FAZER PEDIDO - SELECIONAR UNIDADE */
+.tela_unidades {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Cabeçalho */
+.cabecalho_unidades {
+    width: 100%;
+    background-color: #4a2c1d;
+    color: white;
+    text-align: center;
+    padding: 25px 20px 22px;
+}
+
+/* Título do cabeçalho */
+.cabecalho_unidades h1 {
+    color: white;
+    font-size: 27px;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+}
+
+/* Subtítulo do cabeçalho */
+.cabecalho_unidades p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+}
+
+/* Selecionar unidades */
+.selecionar_unidades {
+    width: 100%;
+    padding: 35px 25px;
+}
+
+.selecionar_unidades::after {
+    content: "";
+    display: block;
+    width: 100%;
+    border-top: 1px solid #d8cfc3;
+    margin-top: -65px;
+}
+
+.selecionar_unidades h2 {
+    color: #4a2c1d;
+    font-size: 28px;
+    margin: 0 0 22px 0;
+    text-align: left;
+}
+
+.escolha_unidade {
+    color: #4a2c1d;
+    font-size: 16px;
+    margin: 0 0 28px 0;
+    text-align: left;
+}
+
+/* Área que contém as 3 unidades */
+.unidades {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.nome_unidade {
+    display: grid;
+    grid-template-columns: 50px 1fr 20px;
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 15px;
+
+    width: 100%;
+    min-height: 130px;
+    padding: 20px;
+
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #b39977;
+    border: 2px solid #dfc9b5;
+    border-radius: 25px;
+    color: #4a2c1d;
+    cursor: pointer;
+}
+
+.nome_unidade .icone-localizacao {
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    background-color: #f5dfd3;
+    color: #220e01;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.nome_unidade .texto-unidade {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
+    width: 100%;
+}
+
+.nome_unidade strong {
+    display: block;
+    color: #2c1103;
+    font-size: 25px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.nome_unidade span {
+    display: block;
+    color: #4e3e34;
+    font-size: 17px;
+    font-weight: normal;
+    margin-top: 0;
+    text-align: center;
+}
+
+.nome_unidade::after {
+    content: "›";
+    grid-column: 3;
+    grid-row: 1 / 3;
+    font-size: 38px;
+    color: #4a2c1d;
+    justify-self: center;
+}
+
+.nome_unidade:hover {
+    background-color: #d5b99a;
+    border-color: #b9a898;
+}
+
+.botao_voltar {
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 9px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 90px;
+    align-self: flex-start;
+}
+
+.botao_voltar:hover {
+    background-color: #6b4028;
+}
+
+
+/* TELA CARDÁPIO */
+.tela_cardapio {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Cabeçalho do cardápio */
+.cabecalho_cardapio {
+    width: 100%;
+    background-color: #4a2c1d;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.cabecalho_cardapio h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.conteudo_cardapio {
+    width: 100%;
+    padding: 25px 22px 30px;
+}
+
+/* Categorias */
+.categoria_cardapio {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.categoria_cardapio h2 {
+    color: #24130b;
+    font-size: 22px;
+    margin: 0 0 15px 0;
+    text-align: left;
+    border-bottom: 1px solid #d8cfc3;
+    padding-bottom: 8px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* Item do cardápio */
+.item_cardapio {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Informações dos produtos */
+.informacoes_item {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.nome_produto {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nome_produto input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    accent-color: #4a2c1d;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.informacoes_item h3 {
+    color: #4a2c1d;
+    font-size: 17px;
+    margin: 0;
+}
+
+.informacoes_item p {
+    color: #6b5a50;
+    font-size: 13px;
+    line-height: 1.35;
+    margin: 4px 0 4px 27px;
+}
+
+.informacoes_item strong {
+    color: #4a2c1d;
+    font-size: 14px;
+    display: block;
+    margin-left: 27px;
+}
+
+/* Quantidade dos itens */
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    min-width: 45px;
+    justify-content: flex-end;
+}
+
+/* Botões de + e - na quantidade */
+.quantidade button {
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 2px;
+    background-color: #4a2c1d;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantidade button:hover {
+    background-color: #6b4028;
+}
+
+.numero_quantidade {
+    color: #4a2c1d;
+    font-size: 15px;
+    font-weight: bold;
+    min-width: 15px;
+    text-align: center;
+}
+
+/* Final do cardápio */
+.final_cardapio {
+    width: 100%;
+    margin-top: 5px;
+    padding-top: 20px;
+    border-top: 1px solid #d8cfc3;
+}
+
+/* Exibição do total do pedido */
+.total_pedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.total_pedido span {
+    color: #4a2c1d;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total_pedido strong {
+    color: #4a2c1d;
+    font-size: 20px;
+}
+
+/* Botões voltar e continuar */
+.botoes_cardapio {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.botoes_cardapio button {
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botoes_cardapio button:hover {
+    background-color: #6b4028;
+}
+
+
+/* TELA RESUMO DO PEDIDO */
+.tela_resumo {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho_resumo {
+    width: 100%;
+    background-color: #4a2c1d;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.cabecalho_resumo h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.conteudo_resumo {
+    width: 100%;
+    padding: 25px 22px 30px;
+}
+
+/* Organização dos produtos no resumo */
+.produtos_resumo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.card_resumo {
+    width: 100%;
+    background-color: white;
+    border: 1px solid #d8cfc3;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.08);
+}
+
+.card_resumo h3 {
+    color: #4a2c1d;
+    font-size: 17px;
+    margin: 0 0 6px 0;
+}
+
+.card_resumo p {
+    color: #6b5a50;
+    font-size: 13px;
+    line-height: 1.35;
+    margin: 0;
+}
+
+.informacoes_resumo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.preco_resumo {
+    color: #4a2c1d;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.quantidade_resumo {
+    color: #4a2c1d;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.final_resumo {
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #d8cfc3;
+}
+
+.total_resumo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.total_resumo span {
+    color: #4a2c1d;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total_resumo strong {
+    color: #4a2c1d;
+    font-size: 20px;
+}
+
+.botoes_resumo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.botoes_resumo button {
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botoes_resumo button:hover {
+    background-color: #6b4028;
+}
+
+.mensagem_continuar {
+    display: none;
+    color: red;
+    font-size: 13px;
+    text-align: center;
+    margin: 0 0 15px 0;
+    font-weight: bold;
+}
+
+
+/* TELA CADASTRO DO CLIENTE */
+.tela_cadastro {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho_cadastro {
+    width: 100%;
+    background-color: #4a2c1d;
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+}
+
+.cabecalho_cadastro h1 {
+    color: white;
+    font-size: 28px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.conteudo_cadastro {
+    width: 100%;
+    padding: 50px 22px 25px;
+    box-sizing: border-box;;
+}
+
+.texto_cadastro {
+    color: #6b5a50;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0 0 75px 0;
+}
+
+.identificacao_cliente h2 {
+    color: #3b2418;
+    font-size: 19px;
+    margin: 0 0 16px 0;
+    text-align: left;
+}
+
+/* Estilização dos campos do cadastro */
+.campo_cadastro {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.campo_cadastro label {
+    display: block;
+    color: #4a2c1d;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.campo_cadastro input,
+.campo_cadastro select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #d8cfc3;
+    background-color: white;
+    color: #4a2c1d;
+    font-size: 14px;
+    padding: 14px 12px;
+    border-radius: 7px;
+    outline: none;
+}
+
+.campo_cadastro input:focus,
+.campo_cadastro select:focus {
+    border-color: #8b6b55;
+}
+
+.campo_cadastro input::placeholder {
+    color: #9a8b80;
+}
+
+/* Botões e ações do cadastro */
+.botao_cadastro {
+    width: 100%;
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    padding: 11px 15px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.botao_cadastro:hover {
+    background-color: #6b4028;
+}
+
+.botao_link_cadastro {
+    display: block;
+    width: 100%;
+    border: none;
+    background: none;
+    color: #4a2c1d;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 50px;
+    text-decoration: underline;
+}
+
+.botao_link_cadastro:hover {
+    color: #6b4028;
+}
+
+.botao_voltar_cadastro {
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 9px 14px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 150px;
+}
+
+.botao_voltar_cadastro:hover {
+    background-color: #6b4028;
+}
+
+
+.formulario_cadastro .botao_voltar_cadastro {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding: 11px 15px;
+}
+
+.formulario_cadastro .botao_cadastro {
+    margin-top: 20px;
+}
+
+
+/* FORMULÁRIO DE CADASTRO */
+.formulario_cadastro {
+    display: none;
+    width: 100%;
+}
+
+.titulo_endereco {
+    color: #4a2c1d;
+    font-size: 17px;
+    margin: 25px 0 18px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #d8cfc3;
+}
+
+.linha_endereco {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.campo_numero {
+    flex: 0 0 95px;
+}
+
+.campo_bairro {
+    flex: 1;
+}
+
+.campo_cidade {
+    flex: 1;
+}
+
+.campo_estado {
+    flex: 0 0 130px;
+}
+
+.privacidade_cadastro {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 18px;
+    border-top: 1px solid #d8cfc3;
+}
+
+.privacidade_cadastro h3 {
+    color: #4a2c1d;
+    font-size: 14px;
+    margin: 0 0 7px 0;
+}
+
+.privacidade_cadastro p {
+    color: #6b5a50;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+}
+
+.privacidade_cadastro .mensagem_consentimento {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 18px 0 0 0;
+    line-height: 1.4;
+}
+
+.checkbox_privacidade {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #6b5a50;
+    font-size: 12px;
+    line-height: 1.4;
+    cursor: pointer;
+}
+
+.checkbox_privacidade input {
+    width: 17px;
+    height: 17px;
+    margin: 1px 0 0 0;
+    accent-color: #4a2c1d;
+    flex-shrink: 0;
+}
+
+.formulario_cadastro .botao_voltar_cadastro {
+    display: block;
+    margin-top: 12px;
+}
+
+.mensagem_consentimento {
+    display: none;
+}
+
+.privacidade_cadastro .mensagem_consentimento {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 18px 0 0 0;
+    line-height: 1.4;
+}
+
+.erro_cadastro {
+    display: none;
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+    line-height: 1.3;
+}
+
+
+/* TELA DE CONFIRMAÇÃO DO PEDIDO */
+.tela_confirmacao {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Cabeçalho da tela de confirmação */
+.cabecalho_confirmacao {
+    width: 100%;
+    background-color: #4a2c1d;
+    color: white;
+    text-align: center;
+    padding: 25px 20px 22px;
+}
+
+/* Título do cabeçalho */
+.cabecalho_confirmacao h1 {
+    color: white;
+    font-size: 27px;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+}
+
+/* Conteúdo da confirmação */
+.conteudo_confirmacao {
+    width: 90%;
+    max-width: 560px;
+    margin: 0 auto 40px;
+    padding: 15px 30PX 30PX;
+    background-color: #f5ead8;
+    border-radius: 0 0 12px 12px;
+    box-sizing: border-box;
+}
+
+.conteudo_confirmacao h2 {
+    color: #4b2418;
+    margin-top: 50px;
+    margin-bottom: 8px;
+}
+
+.conteudo_confirmacao h2:first-of-type {
+    margin-top: 20px;
+}
+
+.conteudo_confirmacao p {
+    line-height: 1.6;
+}
+
+#itensPedidoConfirmacao {
+    margin-bottom: 12px;
+}
+
+/* Botões da confirmação */
+.botoes_confirmacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 70px;
+}
+
+.botoes_confirmacao button {
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botoes_confirmacao button:hover {
+    background-color: #6b4028;
+}
+
+#areaOutroEndereco {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 80px;
+    margin-top: 15px;
+}
+
+
+/* TELA DE ACOMPANHAMENTO DO PEDIDO */
+#telaAcompanhamento {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho_acompanhamento {
+    width: 100%;
+    background-color: #4a2c1d;
+    color: white;
+    text-align: center;
+    padding: 25px 20px 22px;
+}
+
+.cabecalho_acompanhamento h1,
+.cabecalho_acompanhamento h2 {
+    color: white;
+    font-size: 24px;
+    margin: 0 0 8px 0;
+    white-space: normal;
+    text-align: center;
+}
+
+.cabecalho_acompanhamento p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.4;
+    white-space: normal;
+}
+
+.conteudo_acompanhamento {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 20px;
+    padding: 15px 18px 25px;
+    background-color: #f5ead8;
+    border-radius: 0 0 12px 12px;
+    box-sizing: border-box;
+}
+    
+#telaAcompanhamento h3 {
+    color: #4a2c1d;
+    margin-top: 28px;
+    margin-bottom: 18px;
+}
+
+#resumoPedidoFinal {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* Exibição dos produtos do pedido */
+.produto_confirmacao {
+    padding: 12px 0;
+    border-bottom: 1px solid #d8cfc3;
+}
+
+.produto_confirmacao strong {
+    display: block;
+    color: #4a2c1d;
+    margin-bottom: 6px;
+}
+
+.produto_confirmacao p {
+    margin: 0;
+    color: #6b5a50;
+    font-size: 14px;
+}
+
+.produto_confirmacao {
+    padding: 10px 0;
+    border-bottom: 1px solid #d8cfc3;
+    color: #4a2c1d;
+    font-size: 14px;
+}
+
+/* Estilização das mensagens de status do pedido */
+#statusPedido {
+    line-height: 1.6;
+}
+
+#statusPedido p {
+    background-color: #F3E7D3;
+    border-left: 5px solid #B9A28A;
+    border-radius: 6px;
+    padding: 12px 15px;
+    margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+    #telaAcompanhamento .conteudo_acompanhamento {
+        padding: 18px;
+        margin: 20px auto;
+    }
+
+    #telaAcompanhamento .cabecalho_acompanhamento h2 {
+        font-size: 23px;
+    }
+}
+
+.produto_acompanhamento {
+    padding: 8px 0;
+    margin: 0;
+    border-bottom: 1px solid #d8cfc3;
+    color: #4a2c1d;
+    font-size: 14px;
+}
+
+/* Link para fazer um novo pedido */
+#blocoNovoPedido {
+    display: none;
+    margin-top: 35px;
+    padding: 20px 15px;
+    text-align: center;
+    border-top: 1px solid #B9A28A;
+}
+
+.novo-pedido p {
+    color: #4a2c1d;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.novo-pedido a {
+    color: #4a2c1d;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.novo-pedido a:hover {
+    color: #6b4028;
+}
+
+
+/* TELA DE PROMOÇÕES */
+.tela_promocoes {
+    display: none;
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    padding: 25px 18px;
+    box-sizing: border-box;
+    background-color: #f5eadc;
+    color: #4a2c1d;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cabecalho_promocoes {
+    width: calc(100% + 36px);
+    max-width: none;
+    margin: -25px -18px 25px;
+    padding: 25px 20px 22px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #4a2c1d;
+    color: white;
+    border-radius: 0;
+}
+
+.cabecalho_promocoes h1 {
+    color: white;
+    font-size: 27px;
+    margin: 0 0 5px 0;
+    white-space: nowrap;
+}
+
+.cabecalho_promocoes p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+}
+
+.conteudo_promocoes {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.texto_escolha_promocao {
+    margin-bottom: 18px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Seleção da unidade nas promoções */
+.botoes_unidades_promocoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.unidade_promocao {
+    padding: 11px 18px;
+    border: 2px solid #4a2c1d;
+    border-radius: 22px;
+    background-color: #f5eadc;
+    color: #4a2c1d;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.unidade_promocao:hover,
+.unidade_promocao.selecionada {
+    background-color: #4a2c1d;
+    color: #f5eadc;
+}
+
+.promocoes_unidade h2 {
+    margin: 0 0 18px;
+    font-size: 22px;
+}
+
+/* Cartões e informações das promoções */
+.card_promocao {
+    position: relative;
+    margin-bottom: 18px;
+    padding: 22px;
+    border: 1px solid #d5bda5;
+    border-radius: 14px;
+    background-color: #f5eadc;
+    box-shadow: 0 4px 10px rgba(74, 44, 29, 0.10);
+}
+
+.card_promocao h3 {
+    margin: 10px 0;
+    font-size: 20px;
+    color: #4a2c1d;
+}
+
+.card_promocao > p:not(.preco_normal):not(.preco_promocional) {
+    line-height: 1.5;
+}
+
+.selo_promocao {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 5px;
+    background-color: #7a321f;
+    color: #fff8ed;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.combo_promocao {
+    border: 2px solid #9b7047;
+}
+
+.combo_promocao .selo_promocao {
+    background-color: #8a6038;
+}
+
+.preco_normal {
+    margin: 14px 0 4px;
+    color: #77685c;
+    font-size: 14px;
+}
+
+.preco_normal span {
+    text-decoration: line-through;
+}
+
+.preco_promocional {
+    margin: 4px 0 16px;
+    color: #6b2e1c;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.card_promocao small {
+    display: block;
+    margin: 12px 0;
+    color: #655448;
+    line-height: 1.5;
+}
+
+.quantidade_promocao {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.quantidade_promocao button {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 50%;
+    background-color: #4a2c1d;
+    color: #f5eadc;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.quantidade_promocao button:hover {
+    background-color: #70452e;
+}
+
+.valor_quantidade {
+    min-width: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Botões de ação das promoções */
+.acoes_promocoes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 28px;
+}
+
+.acoes_promocoes button {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #4a2c1d;
+    border-radius: 9px;
+    background-color: #4a2c1d;
+    color: #f5eadc;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.acoes_promocoes button:hover {
+    background-color: #70452e;
+}
+
+#acrescentarCardapio {
+    background-color: #4a2c1d;
+    color: #f5eadc;
+}
+
+#acrescentarCardapio:hover {
+    background-color: #70452e;
+}
+
+#voltarInicioPromocoes {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 15px;
+    border: 2px solid #4a2c1d;
+    border-radius: 9px;
+    background-color: #4a2c1d;
+    color: #f5eadc;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+
+#voltarInicioPromocoes:hover {
+    background-color: #70452e;
+}
+
+.botoes_finalizar_promocoes {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+}
+
+.botoes_finalizar_promocoes button {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Botões finalizar pedido e voltar (lado a lado) */
+#concluirPromocoes,
+#voltarInicioPromocoes {
+    width: calc(50% - 6px);
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#voltarInicioPromocoes {
+    display: block;
+}
+
+.acoes_promocoes {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.acoes_promocoes #concluirPromocoes,
+.acoes_promocoes #voltarInicioPromocoes {
+    display: inline-block;
+}
+
+.acoes_promocoes #concluirPromocoes {
+    align-self: flex-start;
+}
+
+
+/* AJUSTES PARA TELAS PEQUENAS */
+@media (max-width: 480px) {
+    .tela_promocoes {
+        padding: 16px 12px;
+    }
+
+    .cabecalho_promocoes h1 {
+        font-size: 24px;
+    }
+
+    .card_promocao {
+        padding: 18px;
+    }
+
+    .card_promocao h3 {
+        font-size: 18px;
+    }
+
+    .preco_promocional {
+        font-size: 21px;
+    }
+
+    .unidade_promocao {
+        padding: 10px 13px;
+        font-size: 13px;
+    }
+}
+
+
+/* TELA DE PAGAMENTO APROVADO */
+#telaPagamentoAprovado {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+.conteudo_pagamento_aprovado {
+    min-height: 750px;
+    padding: 30px 25px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: #4a2c1d;
+}
+
+.icone_pagamento_aprovado {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #d9f0df;
+    color: #27834a;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    margin-bottom: 25px;
+}
+
+.conteudo_pagamento_aprovado h1 {
+    color: #27834a;
+    font-size: 26px;
+    margin: 0 0 15px;
+}
+
+.conteudo_pagamento_aprovado p {
+    color: #6b5a50;
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0 0 15px;
+}
+
+.conteudo_pagamento_aprovado .aviso_simulacao {
+    padding: 12px;
+    background-color: #efe0cb;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.conteudo_pagamento_aprovado .redirecionamento_pagamento {
+    margin-top: 15px;
+    font-size: 13px;
+    font-style: italic;
+}
+
+
+/* TELA DE ACESSO AO PROGRAMA DE FIDELIDADE */
+.tela_acesso_fidelidade,
+.tela_fidelidade {
+    width: 100%;
+    max-width: 430px;
+    min-height: 750px;
+    margin: 0 auto;
+    background-color: #f5eadc;
+    display: none;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+/* Cabeçalho compartilhado */
+.cabecalho_fidelidade {
+    width: 100%;
+    padding: 25px 20px 22px;
+    background-color: #4a2c1d;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.cabecalho_fidelidade h1 {
+    color: white;
+    font-size: 27px;
+    margin: 0 0 7px;
+}
+
+.cabecalho_fidelidade p {
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Conteúdo do acesso */
+.conteudo_acesso_fidelidade {
+    width: 100%;
+    padding: 35px 22px 25px;
+    box-sizing: border-box;
+    padding-top: 50px;
+}
+
+.icone_fidelidade {
+    display: block;
+    text-align: center;
+    font-size: 42px;
+    color: #8b6b45;
+    margin-bottom: 80px;
+}
+
+.conteudo_acesso_fidelidade h2 {
+    color: #4a2c1d;
+    font-size: 21px;
+    text-align: center;
+    margin: 0 0 12px;
+}
+
+.conteudo_acesso_fidelidade > p:not(.texto_novo_cliente) {
+    color: #6b5a50;
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0 0 30px;
+}
+
+.campo_fidelidade {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.campo_fidelidade label {
+    display: block;
+    color: #4a2c1d;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.campo_fidelidade input {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1px solid #d8cfc3;
+    border-radius: 7px;
+    background-color: white;
+    color: #4a2c1d;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.campo_fidelidade input:focus {
+    border-color: #8b6b55;
+}
+
+.erro_fidelidade {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin: 5px 0 0;
+}
+
+/* Botões do acesso */
+.botao_fidelidade,
+.botao_link_fidelidade,
+.botao_voltar_fidelidade {
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+.botao_fidelidade {
+    padding: 13px 15px;
+    border: none;
+    background-color: #4a2c1d;
+    color: white;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.botao_fidelidade:hover {
+    background-color: #6b4028;
+}
+
+.texto_novo_cliente {
+    color: #6b5a50;
+    font-size: 14px;
+    text-align: center;
+    margin: 28px 0 5px;
+}
+
+.botao_link_fidelidade {
+    padding: 10px;
+    border: none;
+    background: none;
+    color: #4a2c1d;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.botao_voltar_fidelidade {
+    width: auto;
+    align-self: flex-start;
+    margin-top: 140px;
+    margin-left: 2px;
+    margin-bottom: 20px;
+    padding: 8px 18px;
+    background-color: #4a2c1d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.botao_voltar_fidelidade:hover {
+    background-color: #6b4028;
+}
+
+/* Botões lado a lado somente na fidelidade */
+#botoesCadastroCliente.botoes_fidelidade {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+#botoesCadastroCliente.botoes_fidelidade button {
+    flex: 1;
+    margin: 0;
+}
+
+
+/* TELA PRINCIPAL DO PROGRAMA FIDELIDADE */
+.conteudo_fidelidade {
+    width: 100%;
+    padding: 25px 18px 30px;
+    box-sizing: border-box;
+}
+
+/* Cartela de pontos */
+.resumo_fidelidade {
+    width: 100%;
+    padding: 22px 16px;
+    background-color: #fffaf2;
+    border: 1px solid #dfc9b5;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(74, 44, 29, 0.08);
+    box-sizing: border-box;
+}
+
+.informacao_pedidos,
+.informacao_pontos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #6b5a50;
+    font-size: 14px;
+}
+
+.informacao_pedidos strong,
+.informacao_pontos strong {
+    color: #4a2c1d;
+    font-size: 29px;
+}
+
+.informacao_pontos {
+    margin-top: 15px;
+}
+
+/* Casinhas de progresso do programa fidelidade */
+.barra_pontos_fidelidade {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    gap: 5px;
+    margin: 20px 0 14px;
+}
+
+/* Cada casinha */
+.casinha_ponto {
+    flex: 1;
+    height: 100%;
+    background-color: #eadfd2;
+    border: 1px solid #cbb69e;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+/* Casinha preenchida */
+.casinha_ponto.preenchido {
+    background-color: #8b6b45;
+    border-color: #8b6b45;
+}
+
+#mensagemPontosFidelidade {
+    color: #6b5a50;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Aviso para novos clientes */
+.aviso_fidelidade {
+    display: none;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 18px;
+    padding: 17px 14px;
+    background-color: #efe0cb;
+    border: 1px solid #dfc9b5;
+    border-radius: 12px;
+    color: #4a2c1d;
+}
+
+.aviso_fidelidade > i {
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.aviso_fidelidade h2 {
+    font-size: 15px;
+    margin: 0 0 7px;
+}
+
+.aviso_fidelidade p {
+    color: #6b5a50;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Cartão da recompensa */
+.recompensa_fidelidade {
+    display: none;
+    margin-top: 18px;
+    padding: 20px 16px;
+    text-align: center;
+    background-color: #4a2c1d;
+    color: #f5eadc;
+    border-radius: 13px;
+}
+
+.recompensa_fidelidade > i {
+    font-size: 27px;
+    color: #e0bd83;
+}
+
+.recompensa_fidelidade h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.recompensa_fidelidade strong {
+    display: block;
+    color: #e0bd83;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.recompensa_fidelidade p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.tela_fidelidade .botao_voltar_fidelidade {
+    margin-top: 25px;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 480px) {
+    .cabecalho_fidelidade h1 {
+        font-size: 24px;
+    }
+
+    .conteudo_acesso_fidelidade {
+        padding: 30px 18px 22px;
+    }
+
+    .conteudo_fidelidade {
+        padding: 20px 14px 25px;
+    }
+
+    .resumo_fidelidade {
+        padding: 19px 13px;
+    }
+}
+
+/* Área do cumpom de desconto */
+.area_cupom {
+    margin: 10px 0;
+    border: 1px solid #969696;
+    border-radius: 12px;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+
+/* Título com ícone */
+.area_cupom h2 {
+    font-size: 15px;
+    margin: 0 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.area_cupom h2::before {
+    content: "\f145";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #795548;
+    font-size: 19px;
+}
+
+/* Campo e botão */
+.campo_cupom {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    width: 100%;
+}
+
+.campo_cupom input {
+    flex: 1;
+    min-width: 0;
+    padding: 9px 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+.campo_cupom button {
+    padding: 9px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #795548;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* Mensagens e valores */
+.area_cupom #mensagemCupom {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px; 
+}
+
+.area_cupom #valorDesconto {
+    color: #219653;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.area_cupom #totalComDesconto {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 3px;
+    margin-bottom: 0;
+}
+
+/* Área de cupons da fidelidade */
+.cupons_fidelidade {
+    margin-top: 22px;
+    padding: 18px 15px;
+    background-color: #fffaf2;
+    border: 1px solid #dfc9b5;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.cupons_fidelidade h2 {
+    color: #4a2c1d;
+    font-size: 19px;
+    margin: 0 0 8px;
+}
+
+.cupons_fidelidade > p {
+    color: #6b5a50;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 15px;
+}
+
+/* Lista de cupons */
+#listaCuponsFidelidade {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Cartão individual do cupom */
+.cupom_fidelidade {
+    padding: 15px;
+    background-color: #f5eadc;
+    border: 1px solid #dfc9b5;
+    border-left: 5px solid #8b6b45;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.cupom_fidelidade.utilizado {
+    border-left-color: #999;
+    opacity: 0.75;
+}
+
+/* Código do cupom */
+.codigo_cupom_fidelidade {
+    color: #4a2c1d;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0 0 8px;
+}
+
+/* Situação do cupom */
+.status_cupom_fidelidade {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    background-color: #e0bd83;
+    color: #4a2c1d;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.cupom_fidelidade.utilizado .status_cupom_fidelidade {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+/* Botão copiar cupom */
+.botao_copiar_cupom {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: transparent;
+    color: #6b4b35;
+    border: 1px solid #b99a78;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.botao_copiar_cupom:hover {
+    background-color: #6b4b35;
+    border-color: #6b4b35;
+    color: #fffaf2;
+}
+
+.botao_copiar_cupom:active {
+    transform: scale(0.97);
+}
+
+/* Alinhar status à esquerda e botão à direita */
+.cupom_fidelidade {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+.cupom_fidelidade .codigo_cupom_fidelidade {
+    grid-column: 1 / -1;
+}
+
+.cupom_fidelidade .status_cupom_fidelidade {
+    margin-right: 0;
+    justify-self: start;
+    width: fit-content;
+}
+
+.cupom_fidelidade .botao_copiar_cupom {
+    justify-self: end;
+    margin-top: 0;
+}
+
+/* Cadastro normal: Cadastrar primeiro e Voltar abaixo */
+#botoesCadastroCliente {
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastrarFinalizar {
+    order: 1;
+}
+
+#voltarIdentificacao {
+    order: 2;
+}
+
+/* Cadastro pela fidelidade: botões lado a lado */
+#botoesCadastroCliente.botoes_fidelidade {
+    flex-direction: row;
+}
+
+#botoesCadastroCliente.botoes_fidelidade #voltarIdentificacao {
+    order: 1;
+}
+
+#botoesCadastroCliente.botoes_fidelidade #cadastrarFinalizar {
+    order: 2;
+}
+
+
+/* DADOS DO CARTÃO - TELA DE CONFIRMAÇÃO */
+/* Área dos dados do cartão */
+#dadosCartao {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 18px;
+    padding: 20px;
+
+    background-color: #fffaf2;
+    border: 1px solid #dfc9b5;
+    border-radius: 12px;
+
+    gap: 12px;
+}
+
+/* Quando o JavaScript abrir os campos */
+#dadosCartao[style*="display: block"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+}
+
+/* Título */
+#dadosCartao h3 {
+    grid-column: 1 / -1;
+    color: #4a2c1d;
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+/* Esconder as quebras de linha antigas do HTML */
+#dadosCartao br {
+    display: none;
+}
+
+/* Rótulos */
+#dadosCartao label {
+    display: block;
+    color: #4a2c1d;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: -6px;
+}
+
+/* Campos de preenchimento */
+#dadosCartao input,
+#dadosCartao select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    border: 1px solid #d8cfc3;
+    border-radius: 7px;
+
+    background-color: #fff;
+    color: #4a2c1d;
+    font-size: 14px;
+    outline: none;
+}
+
+/* Número, nome e tipo ocupam a linha inteira */
+#dadosCartao label[for="numeroCartao"],
+#dadosCartao #numeroCartao,
+#dadosCartao label[for="nomeCartao"],
+#dadosCartao #nomeCartao,
+#dadosCartao label[for="tipoCartao"],
+#dadosCartao #tipoCartao {
+    grid-column: 1 / -1;
+}
+
+/* Validade fica na coluna esquerda */
+#dadosCartao label[for="validadeCartao"],
+#dadosCartao #validadeCartao {
+    grid-column: 1;
+}
+
+/* CVV fica na coluna direita */
+#dadosCartao label[for="cvvCartao"],
+#dadosCartao #cvvCartao {
+    grid-column: 2;
+}
+
+/* Efeito ao clicar nos campos */
+#dadosCartao input:focus,
+#dadosCartao select:focus {
+    border-color: #8b6b55;
+}
+
+/* Cor dos textos de exemplo */
+#dadosCartao input::placeholder {
+    color: #a99a8d;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 480px) {
+    #dadosCartao {
+        padding: 15px;
+    }
+
+    #dadosCartao input,
+    #dadosCartao select {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* Alinhamaneto dos campos de validade e cvv */
+#dadosCartao label[for="validadeCartao"],
+#dadosCartao label[for="cvvCartao"] {
+    grid-row: 6;
+    align-self: end;
+    margin-bottom: 0;
+}
+
+#dadosCartao #validadeCartao,
+#dadosCartao #cvvCartao {
+    grid-row: 7;
+    align-self: start;
+    margin-top: 0;
+}
+
+/* Aviso de simulação de pagamento */
+.aviso_pagamento {
+    margin: 15px 0 20px;
+    padding: 13px 15px;
+
+    background-color: #f5ead8;
+    border-left: 4px solid #8b6b45;
+    border-radius: 7px;
+
+    color: #4a2c1d;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.aviso_pagamento strong {
+    color: #4a2c1d;
+}
+
+
+/* LINK DA POLÍTICA DE PRIVACIDADE */
+.link_politica {
+    border: none;
+    background: none;
+    padding: 0;
+    color: #8B5E3C;
+    text-decoration: underline;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Fundo da janela */
+.janela_politica {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Janela aberta */
+.janela_politica.aberto {
+    display: flex;
+}
+
+/* Conteúdo */
+.conteudo_janela_politica {
+    position: relative;
+    background: #F8F0E3;
+    color: #3D291C;
+    width: 100%;
+    max-width: 650px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px;
+    border-radius: 14px;
+    box-sizing: border-box;
+}
+
+/* Título */
+.conteudo_janela_politica h2 {
+    color: #5A3825;
+    margin: 0 35px 25px 0;
+    text-align: center;
+}
+
+/* Subtítulos */
+.texto_politica h3 {
+    color: #70452D;
+    margin-top: 24px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+
+/* Textos */
+.texto_politica p,
+.texto_politica li {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.texto_politica ul {
+    padding-left: 22px;
+}
+
+/* Botão fechar */
+.fechar_politica {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: #5A3825;
+    cursor: pointer;
+}
+
+/* Botão entendi */
+.botao_entendi_politica {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #70452D;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Foco no teclado */
+.link_politica:focus-visible,
+.fechar_politica:focus-visible,
+.botao_entendi_politica:focus-visible {
+    outline: 3px solid #A66B3F;
+    outline-offset: 3px;
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .janela_politica {
+        padding: 12px;
+    }
+
+    .conteudo_janela_politica {
+        padding: 24px 18px;
+        max-height: 90vh;
+    }
+
+    .texto_politica p,
+    .texto_politica li {
+        font-size: 13px;
+    }
+}
+
+
+/* MANTER AS TELAS COM O MESMO TAMANHO EM TODOS DISPOSITIVOS */
+@media (min-width: 601px) {
+    .conteudo_tela,
+    .tela_unidades,
+    .tela_cardapio,
+    .tela_resumo,
+    .tela_cadastro,
+    .tela_confirmacao,
+    #telaAcompanhamento,
+    #telaPagamentoAprovado,
+    .tela_promocoes,
+    .tela_acesso_fidelidade,
+    .tela_fidelidade {
+        width: 90vw;
+        max-width: 520px;
+        min-height: 100vh;
+    }
+}
+
+
+/* RESPONSIVIDADE DA TELA INICIAL */
+@media (min-width: 600px) {
+    .tela_inicial .conteudo_tela {
+        width: 90vw;
+        max-width: 520px;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .foto_inicio {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+
+/* AJUSTE DAS TELAS PARA CELULARES */
+@media (max-width: 480px) {
+
+    /* Tela inicial */
+    .tela_inicial {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .tela_inicial .conteudo_tela {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding-top: 5px;
+    }
+
+    .tela_inicial .logo_inicio {
+        margin-top: 0;
+    }
+
+    /* Tela de seleção de unidades */
+    .tela_unidades {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .tela_unidades .selecionar_unidades {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tela_unidades .selecionar_unidades::after {
+        display: none;
+    }
+
+    .tela_unidades .botao_voltar {
+        order: 2;
+        margin-top: auto;
+        margin-bottom: 30px;
+    }
+
+    /* Padrão de altura das telas sem rolagem */
+    .tela_resumo,
+    .tela_acesso_fidelidade,
+    .tela_confirmacao,
+    .tela_fidelidade, 
+    .tela_cadastro {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    #telaPagamentoAprovado,
+    #telaPagamentoAprovado .conteudo_pagamento_aprovado {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .tela_cadastro #voltarResumo {
+        position: absolute;
+        bottom: 30px;
+        left: 22px;
+        margin: 0;
+    }
+
+
+}
+

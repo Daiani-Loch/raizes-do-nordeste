@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Raízes do Nordeste</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="decoracao-chao"></div>
+
+
+    <!-- TELA INICIAL -->
+    <main class="tela_inicial">
+
+        <div class="conteudo_tela">
+
+            <img src="imagens/logo raízes do nordeste.jfif" alt="Logo Raízes do Nordeste" class="logo_inicio">
+
+            <img src="imagens/prato completo.jpeg" alt="Prato típico do Raízes do Nordeste" class="foto_inicio">
+
+            <div class="opcoes_inicio">
+
+                <button id="fazerPedido">
+                    <i class="fa-solid fa-bag-shopping icone-botao"></i>
+                    Fazer pedido
+                </button>
+
+                <button id="promocoes">
+                    <i class="fa-solid fa-tag icone-botao"></i>
+                    Promoções
+                </button>
+
+                <button id="fidelidade">
+                    <i class="fa-solid fa-award icone-botao"></i>
+                    Programa Fidelidade
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- TELA FAZER PEDIDO - SELECIONAR UNIDADE -->
+    <section class="tela_unidades">
+
+        <header class="cabecalho_unidades">
+            <h1>Selecionar Unidade</h1>
+        </header>
+
+        <div class="selecionar_unidades">
+
+            <p class="escolha_unidade">
+                Escolha em qual unidade você deseja fazer o pedido.
+            </p>
+
+            <div class="unidades">
+
+
+                <button id="centro" class="nome_unidade">
+                    <i class="fa-solid fa-location-dot icone-localizacao"></i>
+
+                    <div class="texto-unidade">
+                        <strong>Centro</strong>
+                        <span>Ver cardápio</span>
+                    </div>
+                </button>
+
+                <button id="shopping" class="nome_unidade">
+                    <i class="fa-solid fa-location-dot icone-localizacao"></i>
+
+                    <div class="texto-unidade">
+                        <strong>Shopping</strong>
+                        <span>Ver cardápio</span>
+                    </div>
+                </button>
+
+                <button id="bairro" class="nome_unidade">
+                    <i class="fa-solid fa-location-dot icone-localizacao"></i>
+
+                    <div class="texto-unidade">
+                        <strong>Bairro Aimoré</strong>
+                        <span>Ver cardápio</span>
+                    </div>
+                </button>
+
+            </div>
+
+            <button id="voltarInicio" class="botao_voltar">
+                ← Voltar
+            </button>
+
+    </section>
+
+
+    <!-- TELA DE PROMOÇÕES -->
+    <section class="tela_promocoes" id="telaPromocoes">
+
+        <header class="cabecalho_promocoes">
+            <h1>Promoções</h1>
+            <p>Sabores especiais com preços imperdíveis!</p>
+        </header>
+
+        <div class="conteudo_promocoes">
+
+            <p class="texto_escolha_promocao">
+                Escolha a unidade para conferir as ofertas disponíveis.
+            </p>
+
+            <!-- SELEÇÃO DA UNIDADE -->
+            <div class="botoes_unidades_promocoes">
+
+                <button type="button" class="unidade_promocao selecionada" data-unidade="centro">
+                    Centro
+                </button>
+
+                <button type="button" class="unidade_promocao" data-unidade="shopping">
+                    Shopping
+                </button>
+
+                <button type="button" class="unidade_promocao" data-unidade="bairro">
+                    Bairro Aimoré
+                </button>
+
+            </div>
+
+            <!-- PROMOÇÕES DO CENTRO -->
+            <div class="promocoes_unidade" id="promocoesCentro">
+
+                <h2>Ofertas do Centro</h2>
+
+                <article class="card_promocao" data-promocao-id="centro-tapioca-regional"
+                    data-preco-promocional="19.90">
+
+                    <span class="selo_promocao">OFERTA</span>
+                    <h3>Tapioca Regional</h3>
+                    <p>Tapioca, carne de sol, queijo e manteiga de garrafa.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 21,90</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 19,90
+                    </p>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+                <article class="card_promocao" data-promocao-id="centro-cafe" data-preco-promocional="5.90">
+
+                    <span class="selo_promocao">OFERTA</span>
+                    <h3>Café Nordestino</h3>
+                    <p>Um café para acompanhar seu momento especial.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 7,00</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 5,90
+                    </p>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+                <article class="card_promocao combo_promocao" data-promocao-id="centro-combo-cafe"
+                    data-preco-promocional="28.90">
+
+                    <span class="selo_promocao">COMBO EXCLUSIVO</span>
+                    <h3>Combo Café da Terra</h3>
+                    <p>1 Cuscuz Recheado + 1 Café Nordestino.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 32,00</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 28,90
+                    </p>
+
+                    <small>Combo fechado: os itens não podem ser separados.</small>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <!-- PROMOÇÕES DO SHOPPING -->
+            <div class="promocoes_unidade" id="promocoesShopping" hidden>
+
+                <h2>Ofertas do Shopping</h2>
+
+                <article class="card_promocao" data-promocao-id="shopping-tapioca-tradicional"
+                    data-preco-promocional="17.90">
+
+                    <span class="selo_promocao">OFERTA</span>
+                    <h3>Tapioca Tradicional</h3>
+                    <p>Tapioca, coco ralado fresco e manteiga de garrafa.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 19,90</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 17,90
+                    </p>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+                <article class="card_promocao" data-promocao-id="shopping-dadinho" data-preco-promocional="13.90">
+
+                    <span class="selo_promocao">OFERTA</span>
+                    <h3>Dadinho de Tapioca</h3>
+                    <p>Porção de dadinhos de tapioca para compartilhar.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 15,90</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 13,90
+                    </p>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+                <article class="card_promocao combo_promocao" data-promocao-id="shopping-combo-lanche"
+                    data-preco-promocional="24.90">
+
+                    <span class="selo_promocao">COMBO EXCLUSIVO</span>
+                    <h3>Combo Lanche Nordestino</h3>
+                    <p>1 Tapioca Tradicional + 1 Suco Natural de Caju.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 27,90</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 24,90
+                    </p>
+
+                    <small>Combo fechado: os itens não podem ser separados.</small>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <!-- PROMOÇÕES DO BAIRRO AIMORÉ -->
+            <div class="promocoes_unidade" id="promocoesBairro" hidden>
+
+                <h2>Ofertas do Bairro Aimoré</h2>
+
+                <article class="card_promocao" data-promocao-id="bairro-tapioca-regional"
+                    data-preco-promocional="19.90">
+
+                    <span class="selo_promocao">OFERTA</span>
+                    <h3>Tapioca Regional</h3>
+                    <p>Tapioca, carne de sol, queijo e manteiga de garrafa.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 21,90</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 19,90
+                    </p>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+                <article class="card_promocao" data-promocao-id="bairro-macaxeira" data-preco-promocional="12.90">
+
+                    <span class="selo_promocao">OFERTA</span>
+                    <h3>Macaxeira Frita</h3>
+                    <p>Porção de macaxeira frita, crocante e saborosa.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 14,90</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 12,90
+                    </p>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+                <article class="card_promocao combo_promocao" data-promocao-id="bairro-combo-sabor"
+                    data-preco-promocional="29.90">
+
+                    <span class="selo_promocao">COMBO EXCLUSIVO</span>
+                    <h3>Combo Sabor do Nordeste</h3>
+                    <p>1 Cuscuz Recheado + 1 Suco Natural de Acerola.</p>
+
+                    <p class="preco_normal">
+                        De <span>R$ 33,00</span>
+                    </p>
+
+                    <p class="preco_promocional">
+                        Por R$ 29,90
+                    </p>
+
+                    <small>Combo fechado: os itens não podem ser separados.</small>
+
+                    <div class="quantidade_promocao">
+                        <button type="button" data-acao="diminuir" aria-label="Diminuir quantidade">−</button>
+                        <span class="valor_quantidade">0</span>
+                        <button type="button" data-acao="aumentar" aria-label="Aumentar quantidade">+</button>
+                    </div>
+
+                </article>
+
+            </div>
+
+            <!-- AÇÕES DO PEDIDO -->
+            <div class="acoes_promocoes">
+                <button id="acrescentarCardapio">
+                    Adicionar itens do cardápio completo
+                </button>
+
+                <div class="botoes_finalizar_promocoes">
+                    <button id="voltarInicioPromocoes">
+                        ← Voltar
+                    </button>
+
+                    <button id="concluirPromocoes">
+                        Continuar →
+                    </button>
+                </div>
+            </div>
+
+    </section>
+
+
+    <!-- CARDÁPIO CENTRO -->
+    <section class="tela_cardapio">
+
+        <header class="cabecalho_cardapio">
+            <h1 id="tituloCardapio">Cardápio Centro</h1>
+        </header>
+
+        <div class="conteudo_cardapio">
+
+            <!-- LANCHES -->
+            <div class="categoria_cardapio">
+
+                <h2>Lanches</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="25.00">
+                            <h3>Cuscuz Recheado</h3>
+                        </div>
+
+                        <p>Cuscuz, queijo coalho e manteiga de garrafa</p>
+                        <strong>R$25,00</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="21.90">
+                            <h3>Tapioca Regional</h3>
+                        </div>
+
+                        <p>Tapioca, carne de sol, queijo e manteiga de garrafa</p>
+                        <strong>R$21,90</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="26.50">
+                            <h3>Tapioca Premium</h3>
+                        </div>
+
+                        <p>Tapioca, carne seca desfiada acebolada e purê de abóbora</p>
+                        <strong>R$26,50</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="15.90">
+                            <h3>Ovo Mexido</h3>
+                        </div>
+
+                        <p>Dois ovos, manteiga de garrafa e cheiro verde</p>
+                        <strong>R$15,90</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- ACOMPANHAMENTOS -->
+            <div class="categoria_cardapio">
+
+                <h2>Acompanhamentos</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="14.90">
+                            <h3>Macaxeira Frita</h3>
+                        </div>
+
+                        <strong>R$14,90</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="15.90">
+                            <h3>Dadinho de Tapioca</h3>
+                        </div>
+
+                        <strong>R$15,90</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="16.90">
+                            <h3>Queijo Coalho Grelhado</h3>
+                        </div>
+
+                        <strong>R$16,90</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- SOBREMESAS -->
+            <div class="categoria_cardapio">
+
+                <h2>Sobremesas</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="10.00">
+                            <h3>Bolo de Macaxeira</h3>
+                        </div>
+
+                        <strong>R$10,00</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="8.90">
+                            <h3>Cocada</h3>
+                        </div>
+
+                        <strong>R$8,90</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="8.90">
+                            <h3>Pudim de Leite</h3>
+                        </div>
+
+                        <strong>R$8,90</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- BEBIDAS -->
+            <div class="categoria_cardapio">
+
+                <h2>Bebidas</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="8.00">
+                            <h3>Suco Natural de Caju</h3>
+                        </div>
+
+                        <strong>R$8,00</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="8.0">
+                            <h3>Suco Natural de Acerola</h3>
+                        </div>
+
+                        <strong>R$8,00</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="10.00">
+                            <h3>Caldo de Cana</h3>
+                        </div>
+
+                        <strong>R$10,00</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produto" data-preco="7.00">
+                            <h3>Café Nordestino</h3>
+                        </div>
+
+                        <strong>R$7,00</strong>
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- TOTAL E BOTÕES -->
+            <div class="final_cardapio">
+
+                <div class="total_pedido">
+                    <span>Total</span>
+                    <strong id="totalPedido">R$ 0,00</strong>
+                </div>
+
+                <p id="mensagemContinuarCentro" class="mensagem_continuar">
+                    Selecione pelo menos um item para continuar.
+                </p>
+
+                <div class="botoes_cardapio">
+
+                    <button id="voltarUnidades">
+                        ← Voltar
+                    </button>
+
+                    <button id="continuarPedido">
+                        Continuar →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARDÁPIO SHOPPING -->
+    <section class="tela_cardapio" id="cardapioShopping">
+
+        <header class="cabecalho_cardapio">
+            <h1 id="tituloCardapio">Cardápio Shopping</h1>
+        </header>
+
+        <div class="conteudo_cardapio">
+
+            <!-- LANCHES -->
+            <div class="categoria_cardapio">
+
+                <h2>Lanches</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="25.00">
+                            <h3>Cuscuz Recheado</h3>
+                        </div>
+
+                        <p>Cuscuz, queijo coalho e manteiga de garrafa</p>
+                        <strong>R$25,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="19.90">
+                            <h3>Tapioca Tradicional</h3>
+                        </div>
+
+                        <p>Tapioca, coco ralado fresco e manteiga de garrafa</p>
+                        <strong>R$19,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="21.90">
+                            <h3>Tapioca Regional</h3>
+                        </div>
+
+                        <p>Tapioca, carne de sol, queijo e manteiga de garrafa</p>
+                        <strong>R$21,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="26.50">
+                            <h3>Tapioca Premium</h3>
+                        </div>
+
+                        <p>Tapioca, carne seca desfiada acebolada e purê de abóbora</p>
+                        <strong>R$26,50</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="15.90">
+                            <h3>Ovo Mexido</h3>
+                        </div>
+
+                        <p>Dois ovos, manteiga de garrafa e cheiro verde</p>
+                        <strong>R$15,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- ACOMPANHAMENTOS -->
+            <div class="categoria_cardapio">
+
+                <h2>Acompanhamentos</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="14.90">
+                            <h3>Macaxeira Frita</h3>
+                        </div>
+
+                        <strong>R$14,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="15.90">
+                            <h3>Dadinho de Tapioca</h3>
+                        </div>
+
+                        <strong>R$15,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="16.90">
+                            <h3>Queijo Coalho Grelhado</h3>
+                        </div>
+
+                        <strong>R$16,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- SOBREMESAS -->
+            <div class="categoria_cardapio">
+
+                <h2>Sobremesas</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="10.00">
+                            <h3>Bolo de Macaxeira</h3>
+                        </div>
+
+                        <strong>R$10,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="8.90">
+                            <h3>Cocada</h3>
+                        </div>
+
+                        <strong>R$8,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="8.90">
+                            <h3>Pudim de Leite</h3>
+                        </div>
+
+                        <strong>R$8,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- BEBIDAS -->
+            <div class="categoria_cardapio">
+
+                <h2>Bebidas</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="8.00">
+                            <h3>Suco Natural de Caju</h3>
+                        </div>
+
+                        <strong>R$8,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="8.00">
+                            <h3>Suco Natural de Acerola</h3>
+                        </div>
+
+                        <strong>R$8,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="10.00">
+                            <h3>Caldo de Cana</h3>
+                        </div>
+
+                        <strong>R$10,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoShopping" data-preco="7.00">
+                            <h3>Café Nordestino</h3>
+                        </div>
+
+                        <strong>R$7,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- TOTAL E BOTÕES -->
+            <div class="final_cardapio">
+
+                <div class="total_pedido">
+                    <span>Total</span>
+                    <strong id="totalPedidoShopping">R$ 0,00</strong>
+                </div>
+
+                <p id="mensagemContinuarShopping" class="mensagem_continuar">
+                    Selecione pelo menos um item para continuar.
+                </p>
+
+                <div class="botoes_cardapio">
+
+                    <button id="voltarUnidadesShopping">
+                        ← Voltar
+                    </button>
+
+                    <button id="continuarPedidoShopping">
+                        Continuar →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CARDÁPIO BAIRRO AIMORÉ -->
+    <section class="tela_cardapio" id="cardapioBairro">
+
+        <header class="cabecalho_cardapio">
+            <h1 id="tituloCardapio">Cardápio Bairro Aimoré</h1>
+        </header>
+
+        <div class="conteudo_cardapio">
+
+            <!-- LANCHES -->
+            <div class="categoria_cardapio">
+
+                <h2>Lanches</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="25.00">
+                            <h3>Cuscuz Recheado</h3>
+                        </div>
+
+                        <p>Cuscuz, queijo coalho e manteiga de garrafa</p>
+                        <strong>R$25,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="21.90">
+                            <h3>Tapioca Regional</h3>
+                        </div>
+
+                        <p>Tapioca, carne de sol, queijo e manteiga de garrafa</p>
+                        <strong>R$21,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="26.50">
+                            <h3>Tapioca Premium</h3>
+                        </div>
+
+                        <p>Tapioca, carne seca desfiada acebolada e purê de abóbora</p>
+                        <strong>R$26,50</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="15.90">
+                            <h3>Ovo Mexido</h3>
+                        </div>
+
+                        <p>Dois ovos, manteiga de garrafa e cheiro verde</p>
+                        <strong>R$15,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- ACOMPANHAMENTOS -->
+            <div class="categoria_cardapio">
+
+                <h2>Acompanhamentos</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="14.90">
+                            <h3>Macaxeira Frita</h3>
+                        </div>
+
+                        <strong>R$14,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="15.90">
+                            <h3>Dadinho de Tapioca</h3>
+                        </div>
+
+                        <strong>R$15,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="16.90">
+                            <h3>Queijo Coalho Grelhado</h3>
+                        </div>
+
+                        <strong>R$16,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- SOBREMESAS -->
+            <div class="categoria_cardapio">
+
+                <h2>Sobremesas</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="10.00">
+                            <h3>Bolo de Macaxeira</h3>
+                        </div>
+
+                        <strong>R$10,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="8.90">
+                            <h3>Cocada</h3>
+                        </div>
+
+                        <strong>R$8,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="8.90">
+                            <h3>Pudim de Leite</h3>
+                        </div>
+
+                        <strong>R$8,90</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- BEBIDAS -->
+            <div class="categoria_cardapio">
+
+                <h2>Bebidas</h2>
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="8.00">
+                            <h3>Suco Natural de Caju</h3>
+                        </div>
+
+                        <strong>R$8,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="8.00">
+                            <h3>Suco Natural de Acerola</h3>
+                        </div>
+
+                        <strong>R$8,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="10.00">
+                            <h3>Caldo de Cana</h3>
+                        </div>
+
+                        <strong>R$10,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+
+                <div class="item_cardapio">
+
+                    <div class="informacoes_item">
+
+                        <div class="nome_produto">
+                            <input type="checkbox" class="produtoBairro" data-preco="7.00">
+                            <h3>Café com Leite</h3>
+                        </div>
+
+                        <strong>R$7,00</strong>
+
+                    </div>
+
+                    <div class="quantidade"></div>
+
+                </div>
+
+            </div>
+
+            <!-- TOTAL E BOTÕES -->
+            <div class="final_cardapio">
+
+                <div class="total_pedido">
+                    <span>Total</span>
+                    <strong id="totalPedidoBairro">R$ 0,00</strong>
+                </div>
+
+                <p id="mensagemContinuarBairro" class="mensagem_continuar">
+                    Selecione pelo menos um item para continuar.
+                </p>
+
+                <div class="botoes_cardapio">
+
+                    <button id="voltarUnidadesBairro">
+                        ← Voltar
+                    </button>
+
+                    <button id="continuarPedidoBairro">
+                        Continuar →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TELA RESUMO DO PEDIDO -->
+    <section class="tela_resumo">
+
+        <header class="cabecalho_resumo">
+            <h1>Resumo do Pedido</h1>
+        </header>
+
+        <div class="conteudo_resumo">
+
+            <div id="produtosResumo" class="produtos_resumo">
+
+                <!-- OS PRODUTOS SELECIONADOS APARECERÃO AQUI -->
+            </div>
+
+            <div class="final_resumo">
+
+                <div class="total_resumo">
+                    <span>Total</span>
+                    <strong id="totalResumo">R$ 0,00</strong>
+                </div>
+
+                <div class="botoes_resumo">
+
+                    <button id="voltarCardapio">
+                        ← Voltar
+                    </button>
+
+                    <button id="finalizarPedido">
+                        Finalizar pedido →
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TELA DE CADASTRO DO CLIENTE -->
+    <section class="tela_cadastro">
+
+        <header class="cabecalho_cadastro">
+            <h1 id="tituloCadastro">Acesso ao Cadastro</h1>
+        </header>
+
+        <div class="conteudo_cadastro">
+
+            <!-- IDENTIFICAÇÃO DO CLIENTE -->
+            <div id="identificacaoCliente" class="identificacao_cliente">
+
+                <p class="texto_cadastro">
+                    Para finalizar seu pedido, preencha o campo solicitado ou, caso ainda não tenha se cadastrado,
+                    clique em
+                    <br>
+                    <span>'Ainda não possuo cadastro'.</span>
+                </p>
+
+                <h2>Já possui cadastro?</h2>
+
+                <div class="campo_cadastro">
+                    <label for="cpfCliente">CPF</label>
+                    <input type="text" id="cpfCliente" placeholder="Digite seu CPF" maxlength="11" inputmode="numeric">
+                    <p id="erroCpfIdentificacao" class="erro_cadastro"></p>
+                </div>
+
+                <div class="campo_cadastro">
+                    <label for="senhaLogin">Senha</label>
+                    <input type="password" id="senhaLogin" placeholder="Digite sua senha"
+                        autocomplete="current-password">
+                    <p id="erroSenhaLogin" class="erro_cadastro"></p>
+                </div>
+
+                <button id="continuarJaCadastrado" class="botao_cadastro">
+                    Continuar →
+                </button>
+
+                <button id="naoPossuoCadastro" class="botao_link_cadastro">
+                    Ainda não possuo cadastro
+                </button>
+
+                <button id="voltarResumo" class="botao_voltar_cadastro">
+                    ← Voltar
+                </button>
+
+            </div>
+
+            <!-- FORMULÁRIO DE NOVO CADASTRO -->
+            <div id="formularioCadastro" class="formulario_cadastro">
+
+                <div class="campo_cadastro">
+                    <label for="nomeCliente">Nome completo</label>
+                    <input type="text" id="nomeCliente" placeholder="Digite seu nome completo">
+                    <p id="erroNomeCliente" class="erro_cadastro"></p>
+                </div>
+
+                <div class="campo_cadastro">
+                    <label for="emailCliente">E-mail</label>
+                    <input type="email" id="emailCliente" placeholder="Digite seu e-mail">
+                    <p id="erroEmailCliente" class="erro_cadastro"></p>
+                </div>
+
+                <div class="campo_cadastro">
+                    <label for="telefoneCliente">Telefone</label>
+                    <input type="tel" id="telefoneCliente" placeholder="(00) 00000-0000" maxlength="15"
+                        inputmode="numeric" autocomplete="tel">
+                    <p id="erroTelefoneCliente" class="erro_cadastro"></p>
+                </div>
+
+                <div class="campo_cadastro">
+                    <label for="cpfCadastro">CPF</label>
+                    <input type="text" id="cpfCadastro" placeholder="Digite seu CPF" maxlength="11" inputmode="numeric">
+                    <p id="erroCpfCadastro" class="erro_cadastro"></p>
+                </div>
+
+                <div class="campo_cadastro">
+                    <label for="senhaCadastro">Criar senha</label>
+                    <input type="password" id="senhaCadastro" placeholder="Crie uma senha" autocomplete="new-password">
+                    <p id="erroSenhaCadastro" class="erro_cadastro"></p>
+                </div>
+
+                <div class="campo_cadastro">
+                    <label for="confirmarSenhaCadastro">Confirmar senha</label>
+                    <input type="password" id="confirmarSenhaCadastro" placeholder="Digite novamente sua senha"
+                        autocomplete="new-password">
+                    <p id="erroConfirmarSenhaCadastro" class="erro_cadastro"></p>
+                </div>
+
+                <!-- ENDEREÇO -->
+                <h2 class="titulo_endereco">Endereço</h2>
+
+                <div class="campo_cadastro">
+                    <label for="ruaCliente">Rua</label>
+                    <input type="text" id="ruaCliente" placeholder="Digite sua rua">
+                </div>
+
+                <div class="linha_endereco">
+
+                    <div class="campo_cadastro campo_numero">
+                        <label for="numeroCliente">Número</label>
+                        <input type="text" id="numeroCliente" placeholder="Número">
+                    </div>
+
+                    <div class="campo_cadastro campo_bairro">
+                        <label for="bairroCliente">Bairro</label>
+                        <input type="text" id="bairroCliente" placeholder="Digite seu bairro">
+                    </div>
+
+                </div>
+
+                <div class="linha_endereco">
+
+                    <div class="campo_cadastro campo_cidade">
+                        <label for="cidadeCliente">Cidade</label>
+                        <input type="text" id="cidadeCliente" placeholder="Digite sua cidade">
+                    </div>
+
+                    <div class="campo_cadastro campo_estado">
+                        <label for="estadoCliente">Estado</label>
+                        <select id="estadoCliente">
+                            <option value="">Selecione</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- PRIVACIDADE -->
+                <div class="privacidade_cadastro">
+
+                    <h3>Sua privacidade é importante para nós.</h3>
+
+                    <p>
+                        Seus dados serão utilizados para realizar e acompanhar
+                        seu pedido, conforme nossa
+                        <button type="button" id="abrirPoliticaPrivacidade" class="link_politica">
+                            Política de Privacidade
+                        </button>.
+                    </p>
+
+                    <label class="checkbox_privacidade">
+                        <input type="checkbox" id="consentimentoCliente">
+                        <span>
+                            Li e concordo com a Política de Privacidade e autorizo
+                            o tratamento dos meus dados para as finalidades informadas.
+                        </span>
+                    </label>
+
+                    <p id="mensagemConsentimento" class="mensagem_consentimento">
+                        É necessário aceitar a Política de Privacidade para continuar.
+                    </p>
+
+                </div>
+
+                <div id="botoesCadastroCliente">
+
+                    <button id="voltarIdentificacao" class="botao_voltar_cadastro">
+                        ← Voltar
+                    </button>
+
+                    <button id="cadastrarFinalizar" class="botao_cadastro">
+                        Cadastrar e finalizar pedido →
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TELA DE CONFIRMAÇÃO DO PEDIDO -->
+    <section class="tela_confirmacao" id="telaConfirmacao" style="display: none;">
+
+        <header class="cabecalho_confirmacao">
+            <h1>Confirmar Pedido</h1>
+        </header>
+
+        <div class="conteudo_confirmacao">
+
+            <!-- DADOS DO CLIENTE -->
+            <h2>Dados do cliente</h2>
+            <div id="dadosClienteConfirmacao"></div>
+
+            <!-- ENDEREÇO CADASTRADO -->
+            <div id="areaEnderecoConfirmacao" style="display: none;">
+                <h2>Endereço cadastrado</h2>
+                <div id="enderecoClienteConfirmacao"></div>
+            </div>
+
+            <!-- RESUMO DO PEDIDO -->
+            <h2>Resumo do pedido</h2>
+            <div id="itensPedidoConfirmacao"></div>
+
+            <p>
+                <strong>Unidade:</strong>
+                <span id="unidadePedidoConfirmacao"></span>
+            </p>
+
+            <p>
+                <strong>Total:</strong>
+                <span id="totalPedidoConfirmacao">R$ 0,00</span>
+            </p>
+
+            <!-- CUPOM DE DESCONTO -->
+            <div class="area_cupom">
+
+                <h2>Cupom de desconto</h2>
+
+                <div class="campo_cupom">
+                    <input type="text" id="codigoCupom" placeholder="Digite seu cupom">
+
+                    <button type="button" id="aplicarCupom">
+                        Aplicar
+                    </button>
+                </div>
+
+                <p id="mensagemCupom"></p>
+
+                <p id="valorDesconto" style="display: none;">
+                    Desconto: R$ 0,00
+                </p>
+
+                <p>
+                    <strong>Total com desconto:</strong>
+                    <span id="totalComDesconto">R$ 0,00</span>
+                </p>
+
+            </div>
+
+            <!-- FORMA DE PAGAMENTO -->
+            <h2>Forma de pagamento</h2>
+
+            <label>
+                <input type="radio" name="formaPagamento" value="Pix">
+                Pix
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="formaPagamento" value="Dinheiro">
+                Dinheiro
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="formaPagamento" value="Cartão de crédito ou débito">
+                Cartão de crédito ou débito
+            </label>
+
+            <br>
+
+            <!-- DADOS DO CARTÃO -->
+            <div id="dadosCartao" style="display: none;">
+
+                <h3>Dados do cartão</h3>
+
+                <label for="numeroCartao">Número do cartão:</label>
+                <input type="text" id="numeroCartao" placeholder="0000 0000 0000 0000" maxlength="16"
+                    inputmode="numeric">
+
+                <br>
+
+                <label for="nomeCartao">Nome impresso no cartão:</label>
+                <input type="text" id="nomeCartao" placeholder="Nome do titular">
+
+                <br>
+
+                <label for="validadeCartao">Validade (MM/AA):</label>
+                <input type="text" id="validadeCartao" placeholder="MM/AA" maxlength="5">
+
+                <br>
+
+                <label for="cvvCartao">CVV:</label>
+                <input type="password" id="cvvCartao" placeholder="000" maxlength="3" inputmode="numeric">
+
+                <br>
+
+                <label for="tipoCartao">Tipo de cartão:</label>
+                <select id="tipoCartao">
+                    <option value="">Selecione</option>
+                    <option value="credito">Crédito</option>
+                    <option value="debito">Débito</option>
+                </select>
+
+            </div>
+
+            <!-- AVISO DE SIMULAÇÃO -->
+            <p class="aviso_pagamento">
+                <strong>Aviso sobre pagamentos:</strong>
+                Este site funciona em ambiente de simulação, ou seja,
+                todas as formas de pagamento são fictícias (não preencha dados reais).
+                Nenhum pagamento de fato será realizado e nenhum valor real será cobrado.
+            </p>
+
+            <p id="erroPagamento" style="display: none; color: red;">
+
+            <p id="erroPagamento" style="display: none; color: red;">
+                Selecione uma forma de pagamento.
+            </p>
+
+            <!-- FORMA DE RECEBIMENTO -->
+            <h2>Como deseja receber seu pedido?</h2>
+
+            <label>
+                <input type="radio" name="formaRecebimento" value="Retirada">
+                Retirar na unidade
+            </label>
+
+            <br>
+
+            <label>
+                <input type="radio" name="formaRecebimento" value="Entrega">
+                Receber por entrega/delivery
+            </label>
+
+            <!-- OUTRO ENDEREÇO -->
+            <div id="areaOutroEndereco" style="display: none;">
+
+                <textarea id="outroEndereco" placeholder="Digite o endereço completo, se for diferente do cadastrado."
+                    rows="4"></textarea>
+
+                <p style="color: red; font-size: 14px" ;>
+                    Se deixar em branco, usaremos o endereço cadastrado.
+                </p>
+
+            </div>
+
+            <p id="erroConfirmacao" style="display: none; color: red;"></p>
+
+            <div class="botoes_confirmacao">
+                <button id="voltarCadastroConfirmacao" type="button">
+                    ← Voltar
+                </button>
+
+                <button id="confirmarPedido" type="button">
+                    Confirmar pedido →
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TELA DE PAGAMENTO APROVADO -->
+
+    <section id="telaPagamentoAprovado" style="display: none;">
+
+        <div class="conteudo_pagamento_aprovado">
+
+            <div class="icone_pagamento_aprovado">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <h1 id="tituloPagamentoAprovado">
+                Pagamento aprovado!
+            </h1>
+
+            <p id="mensagemPagamentoAprovado">
+                Seu pagamento foi confirmado com sucesso.
+            </p>
+
+            <p class="aviso_simulacao">
+                Pagamento realizado em ambiente de simulação.
+                Nenhum valor real foi cobrado.
+            </p>
+
+            <p class="redirecionamento_pagamento">
+                Você será direcionado para o acompanhamento do pedido...
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- TELA DE ACOMPANHAMENTO DO PEDIDO -->
+    <section id="telaAcompanhamento" style="display: none;">
+
+        <div class="cabecalho_acompanhamento">
+            <h1>Acompanhar Pedido</h1>
+            <p>Acompanhe cada etapa do seu pedido.</p>
+        </div>
+
+        <div class="conteudo_acompanhamento">
+
+            <h3>Pedido confirmado!</h3>
+            <p>Seu pedido foi recebido com sucesso.</p>
+            <br><br>
+
+            <div id="resumoPedidoFinal"></div>
+
+            <!-- STATUS E ETAPAS DO PEDIDO -->
+            <h3>Status do pedido</h3>
+            <div id="statusPedido"></div>
+
+            <div class="novo-pedido" id="blocoNovoPedido" style="display: none;">
+                <p>
+                    Deseja pedir novamente conosco?<br>
+                    Acesse o link abaixo e venha escolher o seu pedido!
+                </p>
+
+                <a href="#" id="botaoNovoPedido">
+                    Fazer um novo pedido
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TELA DE ACESSO AO PROGRAMA DE FIDELIDADE -->
+    <section class="tela_acesso_fidelidade" id="telaAcessoFidelidade">
+
+        <header class="cabecalho_fidelidade">
+            <h1>Programa Fidelidade</h1>
+        </header>
+
+        <div class="conteudo_acesso_fidelidade">
+
+            <i class="fa-solid fa-award icone_fidelidade"></i>
+
+            <h2>Faça parte do nosso programa!</h2>
+
+            <p>
+                Informe seu CPF para consultar seus pedidos,
+                acompanhar seus pontos e aproveitar suas recompensas.
+            </p>
+
+            <div class="campo_fidelidade">
+                <label for="cpfFidelidade">CPF</label>
+                <input type="text" id="cpfFidelidade" placeholder="Digite seu CPF" maxlength="11" inputmode="numeric">
+                <p id="erroCpfFidelidade" class="erro_fidelidade"></p>
+            </div>
+
+            <div class="campo_fidelidade">
+                <label for="senhaFidelidade">Senha</label>
+                <input type="password" id="senhaFidelidade" placeholder="Digite sua senha"
+                    autocomplete="current-password">
+                <p id="erroSenhaFidelidade" class="erro_fidelidade"></p>
+            </div>
+
+            <button id="continuarFidelidade" class="botao_fidelidade">
+                Consultar meus pontos
+            </button>
+
+            <p class="texto_novo_cliente">
+                Ainda não tem cadastro?
+            </p>
+
+            <button id="cadastrarFidelidade" class="botao_link_fidelidade">
+                Criar minha conta
+            </button>
+
+            <button id="voltarInicioFidelidade" class="botao_voltar_fidelidade">
+                ← Voltar
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- TELA PRINCIPAL DO PROGRAMA DE FIDELIDADE -->
+    <section class="tela_fidelidade" id="telaFidelidade">
+
+        <header class="cabecalho_fidelidade">
+            <h1>Programa de Fidelidade</h1>
+            <p>Cada pedido aproxima você de uma recompensa especial!</p>
+        </header>
+
+        <!-- RESUMO DE PEDIDOS E PONTUAÇÃO DO CLIENTE-->
+        <div class="conteudo_fidelidade">
+
+            <div class="resumo_fidelidade">
+                <div class="informacao_pedidos">
+                    <span>Seus pedidos concluídos</span>
+                    <strong id="totalPedidosFidelidade">0</strong>
+                </div>
+
+                <div class="informacao_pontos">
+                    <span>Seus pontos</span>
+                    <strong>
+                        <span id="pontosFidelidade">0</span>/10
+                    </strong>
+                </div>
+
+                <!-- CASINHAS DE PROGRESSO DA FIDELIDADE -->
+                <div class="barra_pontos_fidelidade" id="barraPontosFidelidade" role="progressbar"
+                    aria-label="Progresso dos pontos de fidelidade" aria-valuemin="0" aria-valuemax="10"
+                    aria-valuenow="0">
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                    <span class="casinha_ponto"></span>
+                </div>
+
+                <p id="mensagemPontosFidelidade">
+                    Faça pedidos para começar a acumular pontos!
+                </p>
+            </div>
+
+            <div class="aviso_fidelidade" id="avisoFidelidade">
+                <i class="fa-solid fa-circle-info"></i>
+
+                <div>
+                    <h2>Ainda não realizou um pedido?</h2>
+                    <p>
+                        Faça seu primeiro pedido pelo site para começar
+                        a acumular pontos no Programa Fidelidade e receber a sua recompensa.
+                    </p>
+                </div>
+            </div>
+
+            <div class="recompensa_fidelidade" id="recompensaFidelidade">
+                <i class="fa-solid fa-gift"></i>
+                <h2>Sua recompensa</h2>
+                <strong>50% de desconto</strong>
+                <p>
+                    Complete 10 pontos e ganhe 50% de desconto
+                    no próximo pedido.
+                </p>
+            </div>
+
+            <!-- ÁREA DOS CUPONS DE FIDELIDADE -->
+            <div class="cupons_fidelidade" id="areaCuponsFidelidade" style="display: none;">
+
+                <h2>Meus cupons</h2>
+
+                <p>
+                    Confira os cupons que você conquistou no nosso programa.
+                </p>
+
+                <div id="listaCuponsFidelidade">
+
+                    <!-- Os cupons serão adicionados pelo JavaScript -->
+
+                </div>
+
+            </div>
+
+            <button id="voltarInicioDaFidelidade" class="botao_voltar_fidelidade">
+                ← Voltar ao início
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- JANELA DA POLÍTICA DE PRIVACIDADE -->
+    <div id="janelaPoliticaPrivacidade" class="janela_politica" aria-hidden="true">
+
+        <div class="conteudo_janela_politica" role="dialog" aria-modal="true" aria-labelledby="tituloPolitica">
+
+            <button type="button" id="fecharPoliticaPrivacidade" class="fechar_politica"
+                aria-label="Fechar política de privacidade">
+                ×
+            </button>
+
+            <h2 id="tituloPolitica">
+                Política de Privacidade
+            </h2>
+
+            <div class="texto_politica">
+
+                <!-- CONTEÚDO DA POLÍTICA -->
+
+                <h3>1. Sobre esta Política</h3>
+                <p>
+                    Esta Política de Privacidade apresenta as
+                    informações sobre a coleta, utilização e
+                    armazenamento de dados pessoais no projeto
+                    Raízes do Nordeste, considerando as disposições
+                    da Lei Geral de Proteção de Dados Pessoais
+                    (Lei nº 13.709/2018).
+                </p>
+
+                <h3>2. Dados pessoais coletados</h3>
+                <p>
+                    Durante o cadastro, poderão ser solicitados:
+                </p>
+                <ul>
+                    <li>Nome completo;</li>
+                    <li>CPF;</li>
+                    <li>E-mail;</li>
+                    <li>Telefone;</li>
+                    <li>Endereço completo;</li>
+                    <li>Senha de acesso.</li>
+                </ul>
+                <p>
+                    Durante a utilização do sistema, também são
+                    tratados dados relacionados aos pedidos,
+                    produtos selecionados, valores, pagamentos,
+                    histórico, pontuação e cupons de fidelidade.
+                </p>
+
+                <h3>3. Finalidade da utilização dos dados</h3>
+                <p>As informações são utilizadas para:</p>
+                <ul>
+                    <li>Realizar o cadastro e identificar o cliente;</li>
+                    <li>Permitir o acesso à conta;</li>
+                    <li>Registrar e acompanhar pedidos;</li>
+                    <li>Facilitar a confirmação e o recebimento dos pedidos;</li>
+                    <li>Administrar o programa de fidelidade,
+                        pontuações e cupons;</li>
+                    <li>Realizar comunicações necessárias ao atendimento.</li>
+                </ul>
+
+                <h3>4. Armazenamento das informações</h3>
+                <p>
+                    Neste protótipo acadêmico, os dados dos clientes
+                    e as informações dos pedidos são armazenados
+                    localmente no navegador, por meio do recurso
+                    localStorage.
+                </p>
+                <p>
+                    As informações ficam associadas ao navegador
+                    e ao dispositivo utilizados. Nesta versão,
+                    não existe uma estrutura própria de banco de
+                    dados centralizado para sincronização entre
+                    dispositivos.
+                </p>
+                <p>
+                    O armazenamento utilizado neste protótipo não
+                    deve ser considerado adequado para guardar
+                    dados pessoais reais ou senhas de clientes.
+                </p>
+
+                <h3>5. Compartilhamento e serviços externos</h3>
+                <p>
+                    O projeto utiliza um serviço externo para
+                    simular o processamento dos pagamentos.
+                    A comunicação identificada nesta versão
+                    envia informações relacionadas à forma
+                    de pagamento selecionada e ao identificador
+                    do pedido.
+                </p>
+                <p>
+                    Essa integração possui finalidade acadêmica
+                    e de simulação, não realizando cobranças
+                    financeiras reais.
+                </p>
+
+                <h3>6. Segurança das informações</h3>
+                <p>
+                    O projeto possui validações de formulários
+                    e mecanismos de identificação de clientes.
+                    Entretanto, por se tratar de um protótipo
+                    executado no navegador, não possui uma
+                    estrutura completa de segurança para uso
+                    comercial.
+                </p>
+                <p>
+                    Não devem ser utilizados dados pessoais
+                    reais, senhas pessoais ou informações
+                    financeiras verdadeiras durante os testes.
+                </p>
+
+                <h3>7. Prazo de armazenamento e eliminação</h3>
+                <p>
+                    Nesta versão, os registros permanecem
+                    armazenados localmente no navegador até
+                    serem alterados ou removidos pelos mecanismos
+                    disponíveis no próprio ambiente. O protótipo
+                    não possui uma rotina centralizada de
+                    retenção e eliminação de dados.
+                </p>
+
+                <h3>8. Direitos dos titulares</h3>
+                <p>
+                    Conforme a LGPD, o titular poderá exercer,
+                    quando aplicável, direitos como:
+                </p>
+                <ul>
+                    <li>Confirmação da existência de tratamento;</li>
+                    <li>Acesso aos dados pessoais;</li>
+                    <li>Correção de dados incompletos ou desatualizados;</li>
+                    <li>Anonimização, bloqueio ou eliminação
+                        de dados nas hipóteses legais;</li>
+                    <li>Informações sobre compartilhamento;</li>
+                    <li>Revogação do consentimento, quando aplicável.</li>
+                </ul>
+
+                <h3>9. Responsável e contato</h3>
+                <p>
+                    Responsável pelo tratamento: [Daiani Loch]
+                </p>
+
+                <h3>10. Atualizações desta Política</h3>
+                <p>
+                    Esta política poderá ser atualizada em caso
+                    de alterações nas funcionalidades ou nas
+                    práticas de tratamento de dados.
+                </p>
+                <p>
+                    Última atualização: [24/11/2026]
+                </p>
+
+            </div>
+
+            <button type="button" id="entendiPolitica" class="botao_entendi_politica">
+                Entendi
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -2476,3 +2476,31 @@ body {
 
 }
 
+/* AJUSTE EXCLUSIVO DA TELA DE SELEÇÃO DE UNIDADES */
+@media (min-width: 481px) {
+
+    .tela_unidades {
+        min-height: 0;
+    }
+
+    .tela_unidades .selecionar_unidades {
+        padding: 25px 25px 20px;
+    }
+
+    .tela_unidades .escolha_unidade {
+        margin-bottom: 18px;
+    }
+
+    .tela_unidades .unidades {
+        gap: 12px;
+    }
+
+    .tela_unidades .nome_unidade {
+        min-height: 110px;
+    }
+
+    .tela_unidades .botao_voltar {
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+}
